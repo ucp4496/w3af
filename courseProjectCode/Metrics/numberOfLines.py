@@ -4,7 +4,12 @@ def count_lines_by_language(directory, extensions_by_language):
     counts = {language: 0 for language in extensions_by_language}
     total_lines = 0
 
-    for root, _, files in os.walk(directory):
+    for root, dirs, files in os.walk(directory):
+        if 'courseProjectCode' in dirs:
+            dirs.remove('courseProjectCode')
+        if 'courseProjectDocs' in dirs:
+            dirs.remove('courseProjectDocs')
+
         for file in files:
             for language, extensions in extensions_by_language.items():
                 if any(file.endswith(ext) for ext in extensions):
@@ -24,6 +29,7 @@ def count_lines_by_language(directory, extensions_by_language):
     results.sort(key=lambda x: x[1], reverse=True)
     return results, total_lines
 
+
 extensions_by_language = {
     'Python': ['.py'],
     'HTML': ['.html', '.htm'],
@@ -33,7 +39,8 @@ extensions_by_language = {
     'C': ['.c', '.h'],
 }
 
-project_path = './w3af'
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_path = os.path.abspath(os.path.join(current_dir, '..', '..'))
 
 result, total = count_lines_by_language(project_path, extensions_by_language)
 
