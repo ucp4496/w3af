@@ -1,18 +1,82 @@
-Project W3AF metrics
+# **Project W3AF metrics**
 
 Inside the folder coursePorjectCode/Metrics we will find all the necessary scripts to run the project metrics.
 
 # Code Structure
 
 ## Lines of code
-- To run the script to obtain the results for this metrics. You need to position yourself in /courseProjectCode/Metrics then do python (if you are using a windows) or python3 (if you are using a mac or linux) followed of the name of the script "numberOfLines.py" (e.g python numberOfLines.py)
+1. Open your terminal or command prompt.
+2. Navigate to the folder:
+3. Run the script:
+
+- If you are using **Windows**:
+
+  ```
+  python numberOfLines.py
+  ```
+
+- If you are using **macOS** or **Linux**:
+
+  ```
+  python3 numberOfLines.py
+  ```
+
+> Replace `numberOfLines.py` with the actual script name if different.
 
 ## Comment density
-- To run the script to obtain the results for this metrics. You need to position yourself in /courseProjectCode/Metrics then do python (if you are using a windows) or python3 (if you are using a mac or linux) followed of the name of the script "quantityOfComments.py" (e.g python quantityOfComments.py)
+1. Open your terminal or command prompt.
+2. Navigate to the folder:
+3. Run the script:
+
+- If you are using **Windows**:
+
+  ```
+  python quantityOfComments.py
+  ```
+
+- If you are using **macOS** or **Linux**:
+
+  ```
+  python3 quantityOfComments.py
+  ```
+
+> Replace `quantityOfComments.py` with the actual script name if different.
+
 
 ## Cyclomatic complexity
-- For this metrics we need to install a library called radon. Which is a library that provide us with a lot of different metrics. In this case we are just going to use it to obtain the cyclomatic complexity. For this we need to have python previously installed with pip. We open our command prompt and then we install the library with the next command pip install radon. Once installed we can use this command to obtain the metric radon cc ./w3af -a (For this to work we need to be outside the root project)
+1. Make sure Python and pip are installed on your system.
+2. Open your command prompt or terminal.
+3. Install Radon by running:
+
+  ```
+  pip install radon
+  ```
+
+4. After the installation, run Radon to get the cyclomatic complexity metric:
+
+  ```
+  radon cc ./w3af -a
+  ```
+
+5. Run the above command **outside** the root project folder `w3af`.
+
+>Radon provides many code metrics, and here we use it to calculate cyclomatic complexity.
 
 # Test Coverage
 
-- To run the script to obtain the results from the code coverage. For this we will install the library coverage running this command pip install coverage. Then we will position ourselves in the root directory and run python courseProjectCode/Metrics/testCoverage.py
+1. Make sure you have Python and pip installed.
+2. Open your terminal or command prompt.
+3. Install the coverage library by running:
+
+  ```
+  pip install coverage
+  ```
+
+4. Navigate to the root directory of your project.
+5. Run the coverage script with this command:
+
+  ```
+  python courseProjectCode/Metrics/testCoverage.py
+  ```
+
+> Replace `python` with `python3` if you are on macOS or Linux and your system requires it.
